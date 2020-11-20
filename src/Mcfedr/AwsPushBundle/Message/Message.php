@@ -931,6 +931,10 @@ class Message implements \JsonSerializable
             'time_to_live' => $this->ttl,
             'delay_while_idle' => $this->delayWhileIdle,
             'priority' => $this->priority,
+            'notification' => [
+                'title' => $this->title,
+                'body' => $this->text,
+            ],
             'data' => $this->getTrimmedData([$this, 'getGcmJsonInner'], static::GCM_MAX_LENGTH, 'You message for GCM is too long'),
         ], JSON_UNESCAPED_UNICODE);
     }
