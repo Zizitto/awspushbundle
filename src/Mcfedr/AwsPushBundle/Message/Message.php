@@ -934,6 +934,7 @@ class Message implements \JsonSerializable
             'notification' => [
                 'title' => $this->title,
                 'body' => $this->text,
+                'sound' => $this->sound
             ],
             'data' => $this->getTrimmedData([$this, 'getGcmJsonInner'], static::GCM_MAX_LENGTH, 'You message for GCM is too long'),
         ], JSON_UNESCAPED_UNICODE);
